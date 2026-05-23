@@ -1,5 +1,3 @@
-import sys
-
 code = open(sys.argv[1]).read().split("\n")
 for i in range(len(code)):
     code[i] = code[i].split(' ')
@@ -47,6 +45,11 @@ while True:
             print(chr(mem[gcp(1)%(2**mb)]), end='')
         case "jgt":
             if mem[gcp(1)%(2**mb)] > mem[gcp(2)%(2**mb)]:
+                index += unts(gcp(4)%(2**32))-1
+            else:
+                index += unts(gcp(3)%(2**32))-1
+        case "jeq":
+            if mem[gcp(1)%(2**mb)] == mem[gcp(2)%(2**mb)]:
                 index += unts(gcp(4)%(2**32))-1
             else:
                 index += unts(gcp(3)%(2**32))-1
