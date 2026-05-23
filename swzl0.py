@@ -1,3 +1,5 @@
+import sys
+
 code = open(sys.argv[1]).read().split("\n")
 for i in range(len(code)):
     code[i] = code[i].split(' ')
